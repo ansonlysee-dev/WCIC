@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Washing Central Information Centre</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f3f5f7;--card:#fff;--ink:#16263d;--mute:#5b6b80;--line:#d5dce4;--indigo:#1f3a5f;--wash:#dfe9f2;--stitch:#c98a2b;}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a29;--card:#17273b;--ink:#e7edf4;--mute:#9fb0c4;--line:#2c4058;--indigo:#8fb1cc;--wash:#1e3550;--stitch:#e0a850}}
+:root[data-theme="dark"]{--bg:#0f1a29;--card:#17273b;--ink:#e7edf4;--mute:#9fb0c4;--line:#2c4058;--indigo:#8fb1cc;--wash:#1e3550;--stitch:#e0a850}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+header{background:var(--indigo);color:#fff;padding:32px 20px 28px;border-bottom:4px dashed var(--stitch)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{color:#0f1a29}}
+header h1{margin:0;font-size:clamp(24px,5vw,36px);letter-spacing:.02em}
+header p{margin:6px 0 18px;opacity:.85;max-width:60ch}
+.wrap{max-width:960px;margin:0 auto}
+#q{margin-top:16px;width:100%;padding:12px 14px;font:inherit;border:2px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+#q:focus,.tab:focus-visible{outline:3px solid var(--stitch);outline-offset:2px}
+nav{display:flex;gap:8px;margin:20px 0 4px;flex-wrap:wrap}
+.tab{font:inherit;padding:10px 16px;border:2px solid var(--indigo);background:transparent;color:var(--indigo);border-radius:8px;cursor:pointer;font-weight:600}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--bg)}
+main{padding:0 20px 48px}
+section[hidden]{display:none}
+h2{font-size:22px;margin:24px 0 4px}
+.lead{color:var(--mute);margin:0 0 16px;max-width:65ch}
+.card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--indigo);border-radius:6px;padding:14px 18px;margin:12px 0}
+.card h3{margin:0 0 6px;font-size:17px}
+.card ul{margin:0;padding-left:20px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:420px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--wash)}
+.bar{display:inline-block;height:12px;background:var(--indigo);border-radius:2px;vertical-align:middle}
+.note{background:var(--wash);border-radius:6px;padding:10px 14px;margin:12px 0;font-size:15px}
+.tbd{color:var(--mute);font-style:italic}
+#none{display:none;color:var(--mute);padding:20px 0}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.tile{font:inherit;font-size:clamp(14px,2.6vw,19px);font-weight:700;text-align:left;padding:20px 14px;min-height:120px;background:var(--card);color:var(--indigo);border:2px solid var(--indigo);border-left-width:8px;border-radius:8px;cursor:pointer}
+.tile:hover,.tile:focus-visible{background:var(--wash);outline:3px solid var(--stitch);outline-offset:2px}
+.tile small{display:block;margin-top:6px;font-weight:400;font-size:.72em;color:var(--mute)}
+.back{font:inherit;margin-top:20px;padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;cursor:pointer}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Washing Central Information Centre</h1>
+<label for="q" style="display:none">搜尋</label>
+<input autocomplete="off" id="q" placeholder="搜尋 Search：Laser、酵素石、enzyme、250 lbs" type="search"/>
+</div></header>
+<main><div class="wrap">
+<section id="home"><div class="menu"><button class="tile" data-p="p1">乾手工強度對照表<small>Dry Hand Work Intensity Reference</small></button><button class="tile" data-p="p2">洗水磨損級別對照<small>Washing Wear Level Reference</small></button><button class="tile" data-p="p3">WRD 報表資料查詢<small>WRD report data query</small></button><button class="tile" data-p="p4">WRD development PPT record<small>WRD 開發 PPT 記錄</small></button><button class="tile" data-p="p5">WSPS<small>Washing Sample Projection System</small></button></div></section>
+<section hidden="" id="p1"><button class="back">‹ 返回首頁</button>
+<h2>乾手工強度對照表 <small style="font-weight:400;color:var(--mute);font-size:14px">Dry Hand Work Intensity Reference</small></h2>
+<p class="lead">建立 HandSand／PP Spray／PP Rub／Laser 強度對照表與資料庫，讓工人容易理解工序級別，將工序標準化，以達到更好的品質。</p><p class="lead" style="color:var(--mute);margin:0 0 16px">An intensity reference and database for HandSand, PP Spray, PP Rub and Laser, so workers can easily understand process levels. It standardises the processes for better quality.</p>
+<div class="card" data-kw="versions quantity count base color dark medium light handsand hand sand pp spray pp rub brush towel laser 450 combinations 版本数量 底色 手擦 噴pp 喷pp 扫pp 毛扫 毛巾 组合 干手工 强度 versions quantity count base color dark medium light handsand hand sand pp spray pp rub brush towel laser 450 combinations 版本数量 底色 手擦 喷pp 扫pp 毛扫 毛巾 组合 干手工 强度"><h3>版本數量</h3>
+<div class="scroll"><table>
+<tr><th>工序</th><th>版本數</th><th></th></tr>
+<tr><td>底色（深／中／淺）</td><td>3</td><td><span class="bar" style="width:36px"></span></td></tr>
+<tr><td>HandSand 手擦</td><td>5</td><td><span class="bar" style="width:60px"></span></td></tr>
+<tr><td>PP Spray 噴 PP</td><td>5</td><td><span class="bar" style="width:60px"></span></td></tr>
+<tr><td>PP Rub 掃 PP（毛掃）</td><td>5</td><td><span class="bar" style="width:60px"></span></td></tr>
+<tr><td>PP Rub 掃 PP（毛巾）</td><td>5</td><td><span class="bar" style="width:60px"></span></td></tr>
+<tr><td>Laser 強度</td><td>5</td><td><span class="bar" style="width:60px"></span></td></tr>
+</table></div>
+<div class="note">目標共 450 個組合。組合規則（哪些工序互相搭配）待確認。</div><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Number of versions</h3>
+<div class="scroll"><table><tr><th>Process</th><th>Versions</th></tr>
+<tr><td>Base colour (dark / medium / light)</td><td>3</td></tr><tr><td>HandSand</td><td>5</td></tr><tr><td>PP Spray</td><td>5</td></tr><tr><td>PP Rub (brush)</td><td>5</td></tr><tr><td>PP Rub (towel)</td><td>5</td></tr><tr><td>Laser intensity</td><td>5</td></tr></table></div>
+<div class="note">Target: 450 combinations in total. The combination rule is to be confirmed.</div></div></div>
+<div class="card" data-kw="requirements aeo customer fabric duplicate copy record 250 lbs machine ydvl zhi laser reference 执行要求 客户 布料 副本 记录 洗水 机 requirements aeo customer fabric duplicate copy record 250 lbs machine ydvl zhi laser reference 执行要求 客户 布料 副本 记录 洗水 机"><h3>執行要求</h3><ul>
+<li>製作不同工藝版本，以及各工序配搭的組合版本。</li>
+<li>Laser 強度版本需參考 YDVL - Zhi 的資料，請聯絡他取得。</li>
+<li>全部使用 AEO 客戶布料製作。</li>
+<li>所有版本都要記錄副本。</li>
+<li>所有洗水都在 250 lbs 機中進行。</li></ul><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Requirements</h3><ul>
+<li>Make the different process versions and the combined versions of each process.</li>
+<li>Laser intensity versions need reference data from YDVL - Zhi. Please contact him to get it.</li>
+<li>All versions are made on AEO customer fabrics.</li>
+<li>A duplicate must be recorded for every version.</li>
+<li>All washing is done in a 250 lbs machine.</li></ul></div></div>
+<div class="card" data-kw="sampling standard sandpaper spec rub count pressure first sample 打板标准 砂纸 规格 擦拭 次数 力度 首板 sampling standard sandpaper spec rub count pressure first sample 打板标准 砂纸 规格 擦拭 次数 力度 首板"><h3>打板標準</h3><ul>
+<li>砂紙規格、擦拭次數、力度必須全部明細標註。</li>
+<li>首板出問題會連帶影響後續生產，打板操作必須標準化。</li></ul><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Sampling standard</h3><ul>
+<li>Sandpaper spec, number of rubs and pressure must all be marked in detail.</li>
+<li>A problem in the first sample affects later production, so sampling must be standardised.</li></ul></div></div>
+<div class="card" data-kw="display board production floor wall training new staff physical sample parameters manual 呈现方式 车间 实体看板 张贴 新员工 教材 参数 display board production floor wall training new staff physical sample parameters manual 呈现方式 车间 实体看板 张贴 新员工 教材 参数"><h3>呈現方式：車間實體看板</h3><ul>
+<li>全部測試實樣與對應參數製成實體看板，張貼於生產車間牆面，不裝訂成紙本手冊，避免無人翻閱。</li>
+<li>看板兼作實操教材，本地新員工可對照學習，不必完全依賴師傅口口相傳。</li></ul><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Presentation: physical boards on the production floor</h3><ul>
+<li>All test samples and their parameters are made into physical boards and posted on the production floor wall, not bound into a paper manual, so they do not go unread.</li>
+<li>The boards also work as hands-on training: new local staff can learn by comparing, without relying only on senior workers' word of mouth.</li></ul></div></div>
+</section>
+<section hidden="" id="p2"><button class="back">‹ 返回首頁</button>
+<h2>洗水磨損級別對照 <small style="font-weight:400;color:var(--mute);font-size:14px">Washing Wear Level Reference</small></h2>
+<p class="lead">建立資料庫，讓工人更容易理解工序級別，將工序標準化，以達到更好的品質。</p><p class="lead" style="color:var(--mute);margin:0 0 16px">A database that helps workers understand process levels more easily and standardises the processes for better quality.</p>
+<div class="card" data-kw="comparison method enzyme chemicals 对照方式 酵素 化学品 磨损 级别 comparison method enzyme chemicals 对照方式 酵素 化学品 磨损 级别"><h3>對照方式</h3><ul><li>使用不同的酵素化學品建立磨損級別對照。</li></ul><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Method</h3><ul><li>Build the wear level reference using different enzyme chemicals.</li></ul></div></div>
+<div class="card" data-kw="enzyme types enzyme stone waterless enzyme wear level 酵素种类 酵素石 无水酵素 磨损级别 待补充 enzyme types enzyme stone waterless enzyme wear level 酵素种类 酵素石 无水酵素 磨损级别 待补充 to be added"><h3>酵素種類</h3>
+<div class="scroll"><table>
+<tr><th>種類</th><th>級別對照</th></tr>
+<tr><td>酵素</td><td class="tbd">待補充</td></tr>
+<tr><td>酵素石</td><td class="tbd">待補充</td></tr>
+<tr><td>無水酵素</td><td class="tbd">待補充</td></tr>
+</table></div><hr style="border:0;border-top:1px dashed var(--line);margin:14px 0"/><div class="en"><h3>Enzyme types</h3>
+<div class="scroll"><table><tr><th>Type</th><th>Level reference</th></tr>
+<tr><td>Enzyme</td><td class="tbd">To be added</td></tr><tr><td>Enzyme stone</td><td class="tbd">To be added</td></tr><tr><td>Waterless enzyme</td><td class="tbd">To be added</td></tr></table></div></div></div>
+</section>
+<section hidden="" id="p3"><button class="back">‹ 返回首頁</button>
+<h2>WRD 報表資料查詢 <small style="font-weight:400;color:var(--mute);font-size:14px">WRD report data query</small></h2>
+<div class="card" data-kw="wrd report data query 报表 资料 查询 待补充 to be added"><h3>內容 Content</h3><ul><li class="tbd">待補充 To be added</li></ul></div>
+</section>
+<section hidden="" id="p4"><button class="back">‹ 返回首頁</button>
+<h2>WRD development PPT record <small style="font-weight:400;color:var(--mute);font-size:14px">WRD 開發 PPT 記錄</small></h2>
+<div class="card" data-kw="wrd development ppt record innovation 开发 记录 创新 待补充 to be added"><h3>內容 Content</h3><ul><li class="tbd">待補充 To be added</li></ul></div>
+</section>
+<section hidden="" id="p5"><button class="back">‹ 返回首頁</button>
+<h2>WSPS <small style="font-weight:400;color:var(--mute);font-size:14px">Washing Sample Projection System</small></h2>
+<div class="card" data-kw="wsps washing sample projection system forecast completion customer weekly 预测 完成 客户 洗水 样板 预测系统"><h3>洗水樣板預測系統 Sample forecast and completion</h3>
+<ul><li>按客戶、按週查看預測數與完成數。 View forecast and completion by customer and by week.</li></ul>
+<p style="margin:12px 0 0"><a href="https://ansonlysee-dev.github.io/WSPS/" rel="noopener" style="font-weight:600;color:var(--indigo)" target="_blank">開啟 WSPS Open WSPS ›</a></p></div>
+</section>
+<div id="none">找不到相關資料，請換個關鍵字。</div>
+</div></main>
+<script>
+const panels=[...document.querySelectorAll('section')],q=document.getElementById('q'),none=document.getElementById('none');
+function show(id){panels.forEach(p=>p.hidden=p.id!==id);none.style.display='none';window.scrollTo(0,0)}
+document.querySelectorAll('.tile').forEach(t=>t.onclick=()=>show(t.dataset.p));
+document.querySelectorAll('.back').forEach(b=>b.onclick=()=>{q.value='';filter();show('home')});
+function filter(){
+  const v=q.value.trim().toLowerCase(),tk=v.split(/\s+/).filter(Boolean);
+  const cards=[...document.querySelectorAll('.card')];
+  if(!v){cards.forEach(c=>c.style.display='');none.style.display='none';return show('home')}
+  let hits=0;const hp=new Set();
+  cards.forEach(c=>{const tx=(c.textContent+' '+(c.dataset.kw||'')).toLowerCase(),m=tk.every(t=>tx.includes(t));c.style.display=m?'':'none';if(m){hits++;hp.add(c.closest('section').id)}});
+  panels.forEach(p=>p.hidden=!hp.has(p.id));
+  none.style.display=hits?'none':'block';
+}
+q.addEventListener('input',filter);
+</script>
+</body>
+</html>

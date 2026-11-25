@@ -21,6 +21,8 @@ header p{margin:6px 0 18px;opacity:.85;max-width:60ch}
 .wrap{max-width:960px;margin:0 auto}
 #q{margin-top:16px;width:100%;padding:12px 14px;font:inherit;border:2px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
 #q:focus,.tab:focus-visible{outline:3px solid var(--stitch);outline-offset:2px}
+#langToggle{margin-top:14px;padding:8px 12px;font:inherit;border:2px solid rgba(255,255,255,.75);border-radius:8px;background:transparent;color:#fff;cursor:pointer}
+#langToggle:hover,#langToggle:focus-visible{background:rgba(255,255,255,.14);outline:3px solid var(--stitch);outline-offset:2px}
 nav{display:flex;gap:8px;margin:20px 0 4px;flex-wrap:wrap}
 .tab{font:inherit;padding:10px 16px;border:2px solid var(--indigo);background:transparent;color:var(--indigo);border-radius:8px;cursor:pointer;font-weight:600}
 .tab[aria-selected="true"]{background:var(--indigo);color:var(--bg)}
@@ -49,6 +51,7 @@ th{background:var(--wash)}
 <body>
 <header><div class="wrap">
 <h1>Washing Central Information Centre</h1>
+<button id="langToggle" type="button" aria-pressed="false">English interface</button>
 <label for="q" style="display:none">搜尋</label>
 <input autocomplete="off" id="q" placeholder="搜尋 Search：Laser、酵素石、enzyme、250 lbs" type="search"/>
 </div></header>
@@ -135,10 +138,25 @@ th{background:var(--wash)}
 <div id="none">找不到相關資料，請換個關鍵字。</div>
 </div></main>
 <script>
-const panels=[...document.querySelectorAll('section')],q=document.getElementById('q'),none=document.getElementById('none');
+const panels=[...document.querySelectorAll('section')],q=document.getElementById('q'),none=document.getElementById('none'),langToggle=document.getElementById('langToggle');
+let uiLang='zh';
+const uiText={
+  zh:{toggle:'English interface',placeholder:'搜尋 Search：Laser、酵素石、enzyme、250 lbs',back:'‹ 返回首頁',none:'找不到相關資料，請換個關鍵字。'},
+  en:{toggle:'中文介面',placeholder:'Search 搜尋: Laser, 酵素石, enzyme, 250 lbs',back:'‹ Back to home',none:'No matching information. Try another keyword.'}
+};
+function applyLang(){
+  const t=uiText[uiLang];
+  langToggle.textContent=t.toggle;
+  langToggle.setAttribute('aria-pressed',uiLang==='en'?'true':'false');
+  langToggle.setAttribute('aria-label',uiLang==='zh'?'切換為英文介面':'Switch to Chinese interface');
+  q.placeholder=t.placeholder;
+  document.querySelectorAll('.back').forEach(b=>b.textContent=t.back);
+  none.textContent=t.none;
+}
 function show(id){panels.forEach(p=>p.hidden=p.id!==id);none.style.display='none';window.scrollTo(0,0)}
 document.querySelectorAll('.tile').forEach(t=>t.onclick=()=>show(t.dataset.p));
 document.querySelectorAll('.back').forEach(b=>b.onclick=()=>{q.value='';filter();show('home')});
+langToggle.addEventListener('click',()=>{uiLang=uiLang==='zh'?'en':'zh';applyLang()});
 function filter(){
   const v=q.value.trim().toLowerCase(),tk=v.split(/\s+/).filter(Boolean);
   const cards=[...document.querySelectorAll('.card')];
@@ -149,6 +167,7 @@ function filter(){
   none.style.display=hits?'none':'block';
 }
 q.addEventListener('input',filter);
+applyLang();
 </script>
 </body>
 </html>

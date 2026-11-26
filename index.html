@@ -46,6 +46,22 @@ th{background:var(--wash)}
 .tile:hover,.tile:focus-visible{background:var(--wash);outline:3px solid var(--stitch);outline-offset:2px}
 .tile small{display:block;margin-top:6px;font-weight:400;font-size:.72em;color:var(--mute)}
 .back{font:inherit;margin-top:20px;padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;cursor:pointer}
+/* Demo style: 3｜清爽青綠 */
+
+:root{--bg:#f4fbfa;--card:#fff;--ink:#173b3a;--mute:#64817e;--line:#c8e0dc;--indigo:#087f78;--wash:#e0f3ef;--stitch:#f2a65a}
+body{font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif;background:linear-gradient(180deg,#edf9f7 0,#f7fbfa 420px)}
+header{background:linear-gradient(135deg,#087f78,#155d75);border-bottom:4px solid #f2a65a;border-radius:0 0 28px 28px}
+#q{border-radius:999px;padding-left:20px}
+#langToggle{border-radius:999px}
+.menu{gap:14px}
+.tile{border-radius:20px;border-left-width:5px;min-height:128px;box-shadow:0 8px 20px rgba(8,127,120,.09)}
+.tile:hover,.tile:focus-visible{transform:scale(1.015);background:#e6f7f3}
+.card{border-radius:16px;border-left-width:5px;box-shadow:0 6px 18px rgba(8,127,120,.08)}
+.note{border-radius:12px}
+header h1{font-size:clamp(30px,6vw,44px)}
+.tile{font-size:clamp(17px,3vw,23px);min-height:136px}
+.tile small{font-size:.68em}
+
 </style>
 </head>
 <body>
